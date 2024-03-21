@@ -1,19 +1,19 @@
 package com.agora.springapi.response;
 
-import com.agora.springapi.result.SignupResult;
+import com.agora.springapi.result.Result;
 
 public class SignupResponse {
 
-    private SignupResult signupResult;
+    private Result signupResult;
 
-    public SignupResponse(SignupResult signupResult){
+    public SignupResponse(Result signupResult){
         setSignupResult(signupResult);
     }
-    public SignupResult getSignupResult() {
+    public Result getSignupResult() {
         return signupResult;
     }
 
-    public void setSignupResult(SignupResult signupResult) {
+    public void setSignupResult(Result signupResult) {
         this.signupResult = signupResult;
     }
 

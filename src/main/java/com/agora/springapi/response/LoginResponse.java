@@ -1,20 +1,20 @@
 package com.agora.springapi.response;
 
-import com.agora.springapi.result.LoginResult;
+import com.agora.springapi.result.Result;
 
 public class LoginResponse {
 
-    public LoginResponse(LoginResult loginResult){
+    public LoginResponse(Result loginResult){
         this.loginResult = loginResult;
     }
 
-    private LoginResult loginResult;
+    private Result loginResult;
 
-    public LoginResult getLoginResult() {
+    public Result getLoginResult() {
         return loginResult;
     }
 
-    public void setLoginResult(LoginResult loginResult) {
+    public void setLoginResult(Result loginResult) {
         this.loginResult = loginResult;
     }
 
