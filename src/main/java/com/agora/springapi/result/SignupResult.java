@@ -1,19 +1,21 @@
-package com.agora.springapi;
+package com.agora.springapi.result;
 
-public class LoginResult {
-    private int resultCode;
+public class SignupResult {
+
+    private String resultCode;
     private String resultMessage;
 
-    public LoginResult(int i, String resultMessage) {
-        setResultCode(i);
+    public SignupResult(String resultCode, String resultMessage){
+        setResultCode(resultCode);
         setResultMessage(resultMessage);
     }
 
-    public int getResultCode() {
+
+    public String getResultCode() {
         return resultCode;
     }
 
-    public void setResultCode(int resultCode) {
+    public void setResultCode(String resultCode) {
         this.resultCode = resultCode;
     }
 
