@@ -21,7 +21,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
         boolean isAuthenticated = userService.authenticateUser(loginRequest.getUname(), loginRequest.getPassword());

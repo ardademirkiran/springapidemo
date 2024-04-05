@@ -21,12 +21,12 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public ArrayList<Page<Books>> getBooks(int pageNumber, HashMap<Integer,String> amounts){
+    public ArrayList<Page<Books>> getBooks(int pageNumber, HashMap<String, Integer> amounts){
         ArrayList<Page<Books>> products = new ArrayList<>();
 
-        for(Integer amount: amounts.keySet()){
-            Pageable pageable = PageRequest.of(pageNumber,amount);
-            products.add(bookRepository.findByCategory(pageable,amounts.get(amount)));
+        for(String category: amounts.keySet()){
+            Pageable pageable = PageRequest.of(pageNumber, amounts.get(category));
+            products.add(bookRepository.findByCategory(pageable, category));
         }
 
         return products;

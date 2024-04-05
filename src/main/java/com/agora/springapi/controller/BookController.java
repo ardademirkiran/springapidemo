@@ -24,23 +24,24 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/books")
     public ResponseEntity<?> getBooks(@RequestBody BookRequest bookRequest) {
-        HashMap<Integer,String> categories = new HashMap<>();
+        HashMap<String, Integer> categoriesAndAmounts = new HashMap<>();
+        categoriesAndAmounts.put("Mystery", bookRequest.getMystery());
+        categoriesAndAmounts.put("Sci-Fi", bookRequest.getSci_fi());
+        categoriesAndAmounts.put("Romance", bookRequest.getRomance());
+        categoriesAndAmounts.put("Novel", bookRequest.getNovel());
+        ArrayList<Page<Books>> paginatedBooks = bookService.getBooks(bookRequest.getPage(), categoriesAndAmounts);
+        BookResponse bookResponse = new BookResponse(new Result("B1","Books fetched successfully"));
+        bookResponse.setResponseBooks(flattenBooks(paginatedBooks));
+        return ResponseEntity.ok().body(bookResponse);
+    }
 
-        categories.put(bookRequest.getMystery(), "Mystery");
-        categories.put(bookRequest.getSci_fi(), "Sci-Fi");
-        categories.put(bookRequest.getRomance(), "Romance");
-        categories.put(bookRequest.getNovel(), "Novel");
-
+    List<Books> flattenBooks( ArrayList<Page<Books>> paginatedBooks){
         List<Books> allBooks = new ArrayList<>();
-
-        for(Page<Books> page: bookService.getBooks(bookRequest.getPage(), categories)){
+        for(Page<Books> page: paginatedBooks){
             allBooks.addAll(page.getContent());
         }
-        BookResponse bookResponse = new BookResponse(new Result("B1","Books fetched successfully"));
-        bookResponse.setResponseBooks(allBooks);
-        return ResponseEntity.ok().body(bookResponse);
+        return allBooks;
     }
 }
