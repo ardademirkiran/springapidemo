@@ -3,70 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="signupForm.css">
+    <link rel="stylesheet" href="typography.css">
     <title>Signup Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f2f5;
-        }
-        form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        label {
-            font-weight: bold;
-        }
-        input[type=text], input[type=email], input[type=password], button[type=submit] {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0 16px;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-            border-color: #4a8af4;
-            outline: none;
-        }
-        button[type=submit] {
-            background-color: #4a8af4;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px; /* Adjust as needed */
-        }
-        button[type=submit]:hover {
-            background-color: #3a78d4;
-        }
-    </style>
 </head>
 <body>
-    <form id="signupForm">
-        <h2>Signup Form</h2>
-        <label for="signupUname">Username:</label><br>
-        <input type="text" id="signupUname" name="uname" required><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="signupPassword">Password:</label><br>
-        <input type="password" id="signupPassword" name="password" required><br>
-        <button type="submit" id="signupButton">Signup</button>
-    </form>
+    <div class="form-container">
+        <img src="agorapng.png" alt="Logo" id="Logo">
+        <form id="signupForm">
+            <label for="signupUname">Username:</label><br>
+            <input type="text" id="signupUname" name="uname" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="signupPassword">Password:</label><br>
+            <input type="password" id="signupPassword" name="password" required><br>
+            <label for="passwordConfirmation">Password Confirmation:</label><br>
+            <input type="password" id="passwordConfirmation" name="passwordConfirmation" required><br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p>Already have an account? <a href="login.html" id="signInLink">Sign In</a>.</p>
     <script src="signup.js"></script>
     <script src="regex.js"></script>
 </body>

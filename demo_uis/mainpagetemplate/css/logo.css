@@ -1,0 +1,13 @@
+#agoraLogo {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 10px; /* Align to the top of the viewport */
+  left: 90px; /* Align to the left of the viewport */
+  width: 200px; /* Adjust based on your image size */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1000; /* Ensure it's above other content; adjust as needed */
+  transition: left 0.5s;
+}
+
+.sidebar:hover ~ #agoraLogo, .sidebar.pinned ~ #agoraLogo {
+  left: 270px; /* Move logo to the right */
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agora</title>
+<link rel="stylesheet" href="css/navigationbar.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/logo.css">
+<link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <a href="#forum"><span class="icon"><i class="fas fa-comments"></i></span><span class="text">FORVM</span></a>
+    <a href="#merchant"><span class="icon"><i class="fas fa-tools"></i></span><span class="text">Merchant Tools</span></a>
+    <a href="#wishlist"><span class="icon"><i class="fas fa-heart"></i></span><span class="text">Wishlist</span></a>
+    <a href="#admindashboard"><span class="icon"><i class="fas fa-cog"></i></span><span class="text">Admin Dashboard</span></a>
+    <button onclick="pinSidebar()" id="pinBtn"><i class="fas fa-thumbtack"></i></button>
+  </div>
+  <img src="agorapng.png" alt="Agora logo" id="agoraLogo">
+  
+<script>
+function pinSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  var logo = document.getElementById("agoraLogo");
+
+  sidebar.classList.toggle("pinned");
+}
+</script>
+
+</body>
+</html>

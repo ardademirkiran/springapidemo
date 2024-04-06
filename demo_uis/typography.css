@@ -1,0 +1,16 @@
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    color: #803b3b;
+}
+
+#Logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 200px;
+    height: auto;
+}

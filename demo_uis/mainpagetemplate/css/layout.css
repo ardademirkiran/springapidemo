@@ -1,0 +1,22 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body covers the whole page */
+  overflow: hidden; /* Prevent scrolling caused by the pseudo-element */
+}
+
+body::before {
+  content: '';
+  position: fixed; /* Fixed position to cover the entire page */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../agorabackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keep the image fixed during scroll */
+  filter: blur(7px); /* Apply the blur effect */
+  -webkit-filter: blur(7px); /* For Safari compatibility */
+  z-index: -1; /* Ensure the content is above the background */
+}

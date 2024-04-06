@@ -1,0 +1,52 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('agoralogin.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    z-index: -1;
+}
+
+.form-container p {
+    font-size: 25px; /* Adjust this value as needed */
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Luxurious Roman', serif; /* Maintain font consistency */
+    color: #ffffff; /* Adjust color as needed */
+}
+
+#signInLink {
+    color: #c0395b;; /* Make the link color match your design */
+    text-decoration: none; /* Optional: removes underline */
+}
+
+#signInLink:hover {
+    text-decoration: underline; /* Adds underline on hover for better UX */
+}
+
+#signUpLink {
+    color: #c0395b;; /* Make the link color match your design */
+    text-decoration: none; /* Optional: removes underline */
+}
+
+#signUpLink:hover {
+    text-decoration: underline; /* Adds underline on hover for better UX */
+}

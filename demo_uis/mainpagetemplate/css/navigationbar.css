@@ -1,0 +1,68 @@
+/* Basic styles for the sidebar */
+.sidebar {
+  height: 100%;
+  width: 70px; /* Initial minimal width, adjust as needed */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #80243b;
+  overflow-x: visible; /* Allow elements (like the pin button) to be partially outside */
+  padding-top: 20px;
+  transition: width 0.5s; /* Smooth transition for width adjustments */
+}
+
+/* Style the navigation links with flexbox to align items */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(210, 216, 166);
+}
+
+/* Ensure icons have a fixed width and are centered */
+.sidebar a .icon {
+  width: 30px; /* Fixed width for icons */
+  text-align: center; /* Center the icon */
+}
+
+/* Text styling, initially hidden */
+.sidebar a .text {
+  font-family: 'Luxurious Roman', serif;
+  position: absolute; /* Position text absolutely within the link element */
+  left: 60px; /* Adjust based on the expanded sidebar width */
+  white-space: nowrap; /* Keep text in a single line */
+  opacity: 0; /* Start as invisible */
+  transition: opacity 0.5s ease;
+}
+
+/* Expanded width when sidebar is hovered or pinned, showing text */
+.sidebar:hover,
+.sidebar.pinned {
+  width: 250px; /* Expanded width */
+}
+
+/* Show text next to icons when sidebar is hovered or pinned */
+.sidebar:hover .text,
+.sidebar.pinned .text {
+  display: block; /* Make text visible */
+  opacity: 1;
+}
+
+/* Style adjustments for the circular pin button */
+.sidebar button {
+  position: absolute;
+  top: 60px; /* Adjust top position as needed */
+  right: -17.5px; /* Half outside the sidebar */
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgb(234, 235, 231);
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
