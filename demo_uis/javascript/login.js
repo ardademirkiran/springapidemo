@@ -27,7 +27,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Create a new XMLHttpRequest
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://10.100.66.150:8080/usermanagement/login", true);
+    xhr.open("POST", "http://localhost:8080/usermanagement/login", true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     // Handle the request response
@@ -36,7 +36,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             // Parse the JSON response
             var response = JSON.parse(xhr.responseText);
             if(response.loginResult.resultCode === "L1") {
-                alert("Authorization successful.");
+                window.location.href = 'mainpagetemplate/layout.html';
             } else if(response.loginResult.resultCode === "L0") {
                 alert("Invalid username or password.");
             }

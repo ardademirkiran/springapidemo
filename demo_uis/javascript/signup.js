@@ -17,6 +17,11 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     
     // Original password input from the user
     const originalPassword = document.getElementById('signupPassword').value;
+    const passwordConfirmation = document.getElementById('passwordConfirmation').value;
+    if (originalPassword !== passwordConfirmation) {
+        alert("Passwords do not match.");
+        return; // Stop the function if passwords do not match
+    }
     
     // Hash the password using cyrb53
     const hashedPassword = cyrb53(originalPassword).toString();
@@ -33,7 +38,7 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
 
     // Create a new XMLHttpRequest
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://10.100.112.35:8080/usermanagement/signup", true);
+    xhr.open("POST", "http://localhost:8080/usermanagement/signup", true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     // Handle the request response

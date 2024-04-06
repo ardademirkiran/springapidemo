@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="signupForm.css">
-    <link rel="stylesheet" href="typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/signupForm.css">
+    <link rel="stylesheet" href="css/typography.css">
     <title>Signup Form</title>
 </head>
 <body>
     <div class="form-container">
-        <img src="agorapng.png" alt="Logo" id="Logo">
+        <img src="images/agorapng.png" alt="Logo" id="Logo">
         <form id="signupForm">
             <label for="signupUname">Username:</label><br>
             <input type="text" id="signupUname" name="uname" required><br>
@@ -20,10 +20,10 @@
             <input type="password" id="signupPassword" name="password" required><br>
             <label for="passwordConfirmation">Password Confirmation:</label><br>
             <input type="password" id="passwordConfirmation" name="passwordConfirmation" required><br>
-            <input type="submit" value="Sign Up">
+            <input type="submit" id ="signupButton" value="Sign Up">
         </form>
         <p>Already have an account? <a href="login.html" id="signInLink">Sign In</a>.</p>
-    <script src="signup.js"></script>
-    <script src="regex.js"></script>
+    <script src="javascript/signup.js"></script>
+    <script src="javascript/regex.js"></script>
 </body>
 </html>
